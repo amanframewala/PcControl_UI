@@ -1,35 +1,44 @@
 package com.example.aman.pccontrol;
-
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class TestActivity extends AppCompatActivity {
-    private Button mDone;
-    private String IP,Port;
+
+    TextView response, textView ;
+    EditText editTextAddress, editTextPort, editFileName ;
+    Button buttonConnect, buttonClear ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
-        IP = getIntent().getStringExtra("IP");
-        Port = getIntent().getStringExtra("port");
-        mDone =(Button) findViewById(R.id.doneButton1);
-        mDone.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_main);
+
+        editTextAddress = findViewById(R.id.textAddr) ;
+        editTextPort = findViewById(R.id.textPort) ;
+        buttonClear = findViewById(R.id.clear) ;
+        buttonConnect = findViewById(R.id.connect) ;
+        response = findViewById(R.id.response) ;
+        textView = findViewById(R.id.textView) ;
+        editFileName = findViewById(R.id.editFileName) ;
+
+        buttonConnect.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                ClientHTTPthread test = new ClientHTTPthread();
-                test.setter(IP,Port);
-                test.setSend_msg("LEFT_CLICK");
-                test.start();
+            public void onClick(View v) {
+                Client myClient = new Client(editTextAddress.getText().toString(),
+                        Integer.parseInt(editTextPort.getText().toString()), editFileName.getText().toString(), response, textView) ;
+                myClient.execute() ;
             }
         });
 
-    }
-    public void showToast(String msg){
-        Toast toast = Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT);
-        toast.show();
+        buttonClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                response.setText("");
+            }
+        });
     }
 }

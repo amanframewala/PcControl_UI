@@ -43,6 +43,12 @@ public class ToPCWithNav extends AppCompatActivity
         connect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startActivity(new Intent(ToPCWithNav.this,TestActivity.class));
+            }
+        });
+        /*connect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
 
                 ip_address[0] = ipAddress.getText().toString();
@@ -68,7 +74,7 @@ public class ToPCWithNav extends AppCompatActivity
                 startActivity(tezt);
 
             }
-        });
+        });*/
 
      /*   message.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,9 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.aman.pccontrol.MouseActivity">
+    android:orientation="vertical"
+    >
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/touchPadTextView"
+        android:layout_width="280dp"
+        android:textAlignment="center"
+        android:layout_height="220dp"
+        android:gravity="start"
+        android:background="@drawable/touchpad"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:id="@+id/leftClickButton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_weight="1"
+            android:layout_below="@+id/touchPadTextView"
+            android:layout_marginTop="4dp"
+            android:layout_width="138dp"
+            android:background="@drawable/leftclick"
+            android:layout_alignStart="@+id/touchPadTextView"
+            android:layout_height="60dp"
+            android:text="Left Click" />
+
+        <Button
+            android:id="@+id/rightClickButton"
+            style="?android:attr/buttonStyleSmall"
+            android:background="@drawable/rightclick"
+            android:layout_below="@id/touchPadTextView"
+            android:layout_weight="1"
+            android:layout_toEndOf="@+id/leftClickButton"
+android:layout_marginLeft="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_width="138dp"
+            android:layout_height="60dp"
+            android:text="Right Click" />
+
+</RelativeLayout>
