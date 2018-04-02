@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="Connect to Server"
+        android:id="@+id/action_client"
+        app:showAsAction="never"
+        />
+    <item android:title="Receive Message"
+        android:id="@+id/testAction"
+        app:showAsAction="never"/>
+    <item android:title="Start Server"
+        android:id="@+id/action_startServ"
+        app:showAsAction="never"/>
+</menu>

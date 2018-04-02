@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_file_transfer"
+            android:icon="@mipmap/ic_folder_black_24dp"
+            android:title="File Transfer" />
+        <item
+            android:id="@+id/nav_keyboard"
+            android:icon="@mipmap/ic_keyboard_black_24dp"
+            android:title="Keyboard" />
+        <item
+            android:id="@+id/nav_mouse"
+            android:icon="@mipmap/ic_mouse_black_24dp"
+            android:title="Mouse" />
+        <item
+            android:id="@+id/nav_presenter"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Presenter" />
+    </group>
+
+</menu>
