@@ -15,7 +15,7 @@ public class TestActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_test);
 
         editTextAddress = findViewById(R.id.textAddr) ;
         editTextPort = findViewById(R.id.textPort) ;

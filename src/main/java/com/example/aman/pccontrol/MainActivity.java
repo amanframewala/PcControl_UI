@@ -7,9 +7,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.aman.pccontrol.connect.ToPCWithNav;
+
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+
 public class MainActivity extends AppCompatActivity {
     private Button mConnectPcButton;
     private Button mToPcButton;
+    public static Socket clientSocket = null;
+    public static ObjectInputStream objectInputStream = null;
+    public static ObjectOutputStream objectOutputStream = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

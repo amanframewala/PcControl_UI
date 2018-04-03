@@ -1,6 +1,8 @@
-package com.example.aman.pccontrol;
+package com.example.aman.pccontrol.connect;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +16,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.aman.pccontrol.ClientHTTPthread;
+import com.example.aman.pccontrol.MainActivity;
+import com.example.aman.pccontrol.R;
+import com.example.aman.pccontrol.TestActivity;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -24,7 +31,9 @@ public class ToPCWithNav extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     EditText ipAddress, portNumber, mMessage;
-    Button connect, message, mMan, mDog;
+    Button connect;
+    private SharedPreferences sharedPreferences;
+
     final String[] ip_address = new String[1];
     final String[] port_num = new String[1];
     Socket clientSocket = null;
@@ -36,9 +45,14 @@ public class ToPCWithNav extends AppCompatActivity
         ipAddress = (EditText) findViewById(R.id.ipEt);
         portNumber = (EditText) findViewById(R.id.portEt);
         connect = (Button) findViewById(R.id.connectBt);
-        message = (Button) findViewById(R.id.doneButton);
-        final ClientHTTPthread httpThread = new ClientHTTPthread();
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        sharedPreferences = getActivity().getSharedPreferences("lastConnectionDetails", Context.MODE_PRIVATE);
+        String lastConnectionDetails[] = getLastConnectionDetails();
+        ipAddress.setText(lastConnectionDetails[0]);
+        portNumber.setText(lastConnectionDetails[1]);
+        if (MainActivity.clientSocket != null) {
+            connect.setText("connected");
+            connect.setEnabled(false);
+        }        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         connect.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,16 +90,7 @@ public class ToPCWithNav extends AppCompatActivity
             }
         });*/
 
-     /*   message.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                Intent tezt = new Intent(ToPCWithNav.this,TestActivity.class);
-                tezt.putExtra("IP",ip_address[0]);
-                tezt.putExtra("port",port_num[0]);
-                startActivity(tezt);
-            }
-        });*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -174,4 +179,18 @@ public class ToPCWithNav extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    private String[] getLastConnectionDetails() {
+        String arr[] = new String[2];
+        arr[0] = sharedPreferences.getString("lastConnectedIP", "");
+        arr[1] = sharedPreferences.getString("lastConnectedPort", "3000");
+        return arr;
+    }
+    private void setLastConnectionDetails(String arr[]) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("lastConnectedIP", arr[0]);
+        editor.putString("lastConnectedPort", arr[1]);
+        editor.apply();
+    }
+
+
 }

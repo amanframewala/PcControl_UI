@@ -12,7 +12,7 @@ import java.net.UnknownHostException;
  */
 
 
-class ClientHTTPthread extends Thread {
+public class ClientHTTPthread extends Thread {
     static final int HttpPORT = 5000;
     Socket socket;
     String ip_address,port_number;
