@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_connect"
+            android:icon="@mipmap/connect"
+            android:title="Connect" />
+
+        <item
+            android:id="@+id/nav_file_transfer"
+            android:icon="@mipmap/file_transfer"
+            android:title="File Transfer" />
+        <item
+            android:id="@+id/nav_file_download"
+            android:icon="@mipmap/file_download"
+            android:title="File Download" />
+
+        <item
+            android:id="@+id/nav_power_off"
+            android:icon="@mipmap/power_off"
+            android:title="Power Off" />
+        <item
+            android:id="@+id/nav_keyboard"
+            android:icon="@mipmap/ic_keyboard_black_24dp"
+            android:title="Keyboard" />
+        <item
+            android:id="@+id/nav_mouse"
+            android:icon="@mipmap/ic_mouse_black_24dp"
+            android:title="Mouse" />
+        <item
+            android:id="@+id/nav_presenter"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Presenter" />
+    </group>
+
+    <!--<item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>-->
+
+</menu>

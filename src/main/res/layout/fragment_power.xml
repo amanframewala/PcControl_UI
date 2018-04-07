@@ -29,5 +29,28 @@
             android:drawableTop="@mipmap/restart" />
     </LinearLayout>
 
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/sleepButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:layout_margin="10dp"
+            android:text="Suspend"
+            android:drawableTop="@mipmap/sleep" />
+
+        <Button
+            android:id="@+id/lockButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:layout_margin="10dp"
+            android:text="Lock"
+            android:drawableTop="@mipmap/lock" />
+    </LinearLayout>
 
 </LinearLayout>

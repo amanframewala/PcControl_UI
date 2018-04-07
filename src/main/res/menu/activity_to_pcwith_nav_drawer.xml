@@ -5,6 +5,11 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_connection"
+            android:icon="@mipmap/ic_folder_black_24dp"
+            android:title="File Transfer" />
+
+        <item
             android:id="@+id/nav_file_transfer"
             android:icon="@mipmap/ic_folder_black_24dp"
             android:title="File Transfer" />

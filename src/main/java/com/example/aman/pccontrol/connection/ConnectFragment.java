@@ -1,9 +1,8 @@
-package com.example.aman.pccontrol.connect;
+package com.example.aman.pccontrol.connection;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,58 +12,71 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.aman.pccontrol.MainActivity;
+import com.example.aman.pccontrol.R;
+import com.example.aman.pccontrol.SendMessageToServer;
+import com.example.aman.pccontrol.Server.Server;
+
 import java.net.Socket;
 
-import me.varunon9.remotecontrolpc.MainActivity;
-import me.varunon9.remotecontrolpc.R;
-import me.varunon9.remotecontrolpc.server.Server;
-
+/**
+ * Created by aman on 3/4/18.
+ */
 
 public class ConnectFragment extends Fragment {
-
-    private Button connectButton;
+    private Button connectButton, disconnectButton;
     private EditText ipAddressEditText, portNumberEditText;
     private SharedPreferences sharedPreferences;
-
-    public ConnectFragment() {
-        // Required empty public constructor
-    }
-
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-        View rootView = inflater.inflate(R.layout.fragment_connect, container, false);
-        ipAddressEditText = (EditText) rootView.findViewById(R.id.ipAddress);
-        portNumberEditText = (EditText) rootView.findViewById(R.id.portNumber);
-        connectButton = (Button) rootView.findViewById(R.id.connectButton);
-        sharedPreferences = getActivity().getSharedPreferences("lastConnectionDetails", Context.MODE_PRIVATE);
-        String lastConnectionDetails[] = getLastConnectionDetails();
-        ipAddressEditText.setText(lastConnectionDetails[0]);
-        portNumberEditText.setText(lastConnectionDetails[1]);
-        if (MainActivity.clientSocket != null) {
-            connectButton.setText("connected");
-            connectButton.setEnabled(false);
+    
+    public ConnectFragment(){
+    
         }
-        connectButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                makeConnection();
+        @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+            View rootView = inflater.inflate(R.layout.fragment_connect, container, false);
+            ipAddressEditText = (EditText) rootView.findViewById(R.id.ipAddress);
+            portNumberEditText = (EditText) rootView.findViewById(R.id.portNumber);
+            connectButton = (Button) rootView.findViewById(R.id.connectButton);
+            disconnectButton = (Button)  rootView.findViewById(R.id.closeConnectButton);
+            sharedPreferences = getActivity().getSharedPreferences("lastConnectionDetails", Context.MODE_PRIVATE);
+            String lastConnectionDetails[] = getLastConnectionDetails();
+            ipAddressEditText.setText(lastConnectionDetails[0]);
+            portNumberEditText.setText(lastConnectionDetails[1]);
+            if (MainActivity.clientSocket != null) {
+                connectButton.setText("connected");
+                disconnectButton.setEnabled(true);
+                connectButton.setEnabled(false);
+                disconnectButton.setEnabled(true);
             }
-        });
-        return rootView;
-    }
+            else {
+                connectButton.setText("Connect");
+                connectButton.setEnabled(true);
 
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        getActivity().setTitle(getResources().getString(R.string.connect));
+            }
+            connectButton.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    makeConnection();
+                }
+            });
+            disconnectButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    disconnect();
+                }
+            });
+            return rootView;
+
+        }
+
+    private void disconnect() {
+        MainActivity.sendMessageToServer("DISCONNECT");
+        connectButton.setEnabled(true);
+        connectButton.setText("Connect");
     }
 
     public void makeConnection() {
         String ipAddress = ipAddressEditText.getText().toString();
         String port = portNumberEditText.getText().toString();
-        if (ValidateIP.validateIP(ipAddress) && ValidateIP.validatePort(port)) {
             setLastConnectionDetails(new String[] {ipAddress, port});
             connectButton.setText("Connecting...");
             connectButton.setEnabled(false);
@@ -89,10 +101,9 @@ public class ConnectFragment extends Fragment {
                     }
                 }
             }.execute();
-        } else {
-            Toast.makeText(getActivity(), "Invalid IP Address or port", Toast.LENGTH_SHORT).show();
-        }
+
     }
+
     private String[] getLastConnectionDetails() {
         String arr[] = new String[2];
         arr[0] = sharedPreferences.getString("lastConnectedIP", "");
@@ -105,5 +116,10 @@ public class ConnectFragment extends Fragment {
         editor.putString("lastConnectedPort", arr[1]);
         editor.apply();
     }
+    public void onStart() {
+
+        super.onStart();
+    }
+
 
 }
