@@ -3,10 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.remotecontrolpc.me.example.remotecontrolpc.MainActivity" >
 
-    <item
-        android:id="@+id/action_live_screen"
-        android:title="Live Screen"
-        app:showAsAction="withText|ifRoom"/>
 
     <item
         android:id="@+id/action_settings"

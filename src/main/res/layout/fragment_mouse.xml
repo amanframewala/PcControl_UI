@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@color/darkBackground">
 
     <TextView
         android:id="@+id/touchPadTextView"
@@ -23,7 +24,10 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Left Click" />
+            android:text="Left Click"
+            android:background="@color/button"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="5dp"/>
 
         <Button
             android:id="@+id/rightClickButton"
@@ -31,6 +35,9 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Right Click" />
+            android:text="Right Click"
+            android:background="@color/button"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="5dp"/>
     </LinearLayout>
 </LinearLayout>

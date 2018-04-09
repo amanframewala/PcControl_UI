@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@color/background">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +15,11 @@
             android:id="@+id/upArrowButton"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:background="@drawable/arrow_up" />
+            android:text="▲"
+            android:textSize="50sp"
+            android:background="@color/transparent"
+            android:textColor="@color/white"
+            android:layout_gravity="center"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,20 +30,31 @@
             android:id="@+id/leftArrowButton"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:background="@drawable/arrow_left" />
+            android:background="@color/transparent"
+            android:text="◀"
+            android:textSize="50sp"
+
+            android:textAlignment="center"
+            android:textColor="@color/white"/>
         <Button
             android:id="@+id/f5Button"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="15dp"
-            android:background="@color/colorPrimaryLight"
-            android:text="F5" />
+            android:background="@color/transparent"
+            android:text="F5" 
+            android:textSize="40sp"
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/rightArrowButton"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:background="@drawable/arrow_right" />
+            android:background="@color/transparent"
+            android:text="▶"
+            android:textSize="50sp"
+            android:textAlignment="center"
+            android:textColor="@color/white"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,7 +65,11 @@
             android:id="@+id/downArrowButton"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:background="@drawable/arrow_down" />
+            android:text="▼"
+            android:textSize="50sp"
+            android:textColor="@color/white"
+            android:background="@color/transparent"
+            />
     </LinearLayout>
 
 </LinearLayout>

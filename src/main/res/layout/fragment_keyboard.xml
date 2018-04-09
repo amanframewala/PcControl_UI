@@ -2,24 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@color/darkBackground">
 
     <EditText
         android:id="@+id/typeHereEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Tap to write quick text"
-        android:ems="10" >
+        android:ems="10"
+        android:textColor="@color/white">
         <requestFocus />
     </EditText>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/enterButton"
-            style="?android:attr/buttonStyleSmall"
+             android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -29,7 +32,8 @@
         <Button
             android:id="@+id/ctrlButton"
             android:textAllCaps="false"
-            style="?android:attr/buttonStyleSmall"
+            android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -38,7 +42,8 @@
         <Button
             android:id="@+id/altButton"
             android:textAllCaps="false"
-            style="?android:attr/buttonStyleSmall"
+            android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -47,7 +52,9 @@
         <Button
             android:id="@+id/shiftButton"
             android:textAllCaps="false"
-            style="?android:attr/buttonStyleSmall"
+            
+ android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -55,7 +62,8 @@
 
         <Button
             android:id="@+id/tabButton"
-            style="?android:attr/buttonStyleSmall"
+            android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -64,7 +72,9 @@
 
         <Button
             android:id="@+id/escButton"
-            style="?android:attr/buttonStyleSmall"
+
+            android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -79,7 +89,9 @@
 
         <Button
             android:id="@+id/printScrButton"
-            style="?android:attr/buttonStyleSmall"
+
+            android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -88,7 +100,9 @@
 
         <Button
             android:id="@+id/backspaceButton"
-            style="?android:attr/buttonStyleSmall"
+            
+ android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -97,7 +111,9 @@
 
         <Button
             android:id="@+id/deleteButton"
-            style="?android:attr/buttonStyleSmall"
+            
+ android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -106,7 +122,9 @@
 
         <Button
             android:id="@+id/clearTextButton"
-            style="?android:attr/buttonStyleSmall"
+            
+ android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -121,7 +139,9 @@
 
         <Button
             android:id="@+id/nButton"
-            style="?android:attr/buttonStyleSmall"
+            
+ android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -129,7 +149,9 @@
 
         <Button
             android:id="@+id/tButton"
-            style="?android:attr/buttonStyleSmall"
+            
+ android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -137,7 +159,9 @@
 
         <Button
             android:id="@+id/wButton"
-            style="?android:attr/buttonStyleSmall"
+            
+ android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -145,7 +169,9 @@
 
         <Button
             android:id="@+id/rButton"
-            style="?android:attr/buttonStyleSmall"
+            
+ android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -153,7 +179,9 @@
 
         <Button
             android:id="@+id/fButton"
-            style="?android:attr/buttonStyleSmall"
+            
+ android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -161,7 +189,9 @@
 
         <Button
             android:id="@+id/zButton"
-            style="?android:attr/buttonStyleSmall"
+            
+ android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -175,7 +205,9 @@
 
         <Button
             android:id="@+id/cButton"
-            style="?android:attr/buttonStyleSmall"
+            
+ android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -183,7 +215,9 @@
 
         <Button
             android:id="@+id/xButton"
-            style="?android:attr/buttonStyleSmall"
+            
+ android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -191,7 +225,9 @@
 
         <Button
             android:id="@+id/vButton"
-            style="?android:attr/buttonStyleSmall"
+            
+ android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -199,7 +235,9 @@
 
         <Button
             android:id="@+id/aButton"
-            style="?android:attr/buttonStyleSmall"
+            
+ android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -207,7 +245,9 @@
 
         <Button
             android:id="@+id/oButton"
-            style="?android:attr/buttonStyleSmall"
+            
+ android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -215,7 +255,9 @@
 
         <Button
             android:id="@+id/sButton"
-            style="?android:attr/buttonStyleSmall"
+            
+ android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -229,7 +271,9 @@
 
         <Button
             android:id="@+id/ctrlAltTButton"
-            style="?android:attr/buttonStyleSmall"
+            
+ android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -237,7 +281,9 @@
 
         <Button
             android:id="@+id/ctrlShiftZButton"
-            style="?android:attr/buttonStyleSmall"
+            
+ android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -245,7 +291,9 @@
 
         <Button
             android:id="@+id/altF4Button"
-            style="?android:attr/buttonStyleSmall"
+            
+ android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
