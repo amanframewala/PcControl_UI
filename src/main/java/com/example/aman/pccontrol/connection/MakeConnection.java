@@ -37,9 +37,11 @@ public abstract class MakeConnection  extends AsyncTask<Void, Void, Socket> impl
             // 3s timeout
             clientSocket.connect(socketAddress, 100000);
             Log.d("Socket Connected", "doInBackground: ");
-            MainActivity.objectInputStream = new ObjectInputStream(clientSocket.getInputStream());
+            MainActivity.inputStream = clientSocket.getInputStream();
+            MainActivity.objectInputStream = new ObjectInputStream(MainActivity.inputStream);
             Log.d("Input Stream", "doInBackground: obtained");
-            MainActivity.objectOutputStream = new ObjectOutputStream(clientSocket.getOutputStream());
+            MainActivity.outputStream = clientSocket.getOutputStream();
+            MainActivity.objectOutputStream = new ObjectOutputStream(MainActivity.outputStream);
         } catch(Exception e) {
             e.printStackTrace();
             clientSocket = null;

@@ -15,10 +15,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.aman.pccontrol.connection.ConnectFragment;
+import com.example.aman.pccontrol.filetransfer.FileCards;
 
+import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by aman on 3/4/18.
@@ -27,9 +32,13 @@ import java.net.Socket;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     public static Socket clientSocket = null;
+    public static InputStream inputStream = null;
+    public static OutputStream outputStream = null;
     public static ObjectInputStream objectInputStream = null;
     public static ObjectOutputStream objectOutputStream = null;
     private static AppCompatActivity thisActivity;
+    public static List<FileCards> fileCardsList =  new ArrayList<>();;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -75,6 +84,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_power_off:
                 fragment = new PowerFragment();
+                break;
+            case R.id.nav_file_download:
+                fragment = new FileDownloadFragment();
                 break;
 
 
